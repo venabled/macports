@@ -1,0 +1,15 @@
+--- liblas/core.py.orig	2013-08-06 16:11:31.000000000 -0500
++++ liblas/core.py	2013-08-06 16:15:21.000000000 -0500
+@@ -149,10 +149,10 @@
+ elif os.name == 'posix':
+     platform = os.uname()[0]
+     if platform == 'Darwin':
+-        lib_name = 'liblas_c.dylib'
++        lib_name = find_library('liblas_c.dylib')
+         free = ctypes.CDLL(find_library('libc')).free
+     else:
+-        lib_name = 'liblas_c.so'
++        lib_name = find_library('liblas_c.so')
+         free = ctypes.CDLL(find_library('libc.so.6')).free
+     las = ctypes.CDLL(lib_name)
+ else:

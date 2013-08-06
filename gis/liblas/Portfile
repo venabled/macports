@@ -1,0 +1,35 @@
+# $Id: Portfile 92837 2012-05-09 00:51:48Z ryandesign@macports.org $
+
+PortSystem      1.0
+
+name            liblas
+version         1.7.0
+revision        1
+categories      gis
+maintainers     gmail.com:venabled
+platforms       darwin
+description     LAS 1.0/1.1/1.2 ASPRS LiDAR data translation toolset
+
+long_description \
+    libLAS is a C/C++ library for reading and writing the very common LAS \
+    LiDAR format. The ASPRS LAS format is a sequential binary format used to \
+    store data from LiDAR sensors and by LiDAR processing software for data \
+    interchange and archival.
+
+homepage        http://www.liblas.org/index.html
+master_sites    http://download.osgeo.org/liblas
+
+checksums           sha1    f31070efdf7bb7d6675c23c6c6c84584e3a10869 \
+                    rmd160  74642d8a2eb302458e7e829eab733ba409725f87
+
+distname        libLAS-${version}
+
+configure.cmd   cmake
+configure.pre_args
+configure.args      -DCMAKE_INSTALL_PREFIX=${prefix} -DWITH_GDAL=ON \
+	-DWITH_GEOTIFF=ON
+
+depends_lib \
+    port:boost \
+    port:gdal \
+    port:libgeotiff
