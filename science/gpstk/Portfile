@@ -2,10 +2,10 @@
 # $Id$
 
 PortSystem      	1.0
-PortGroup       	cmake 1.0
 
 name            	gpstk
 version         	2.1
+license				LGPL-2.1+
 categories      	science
 maintainers     	gmail.com:venabled
 platforms       	darwin
@@ -27,3 +27,11 @@ distfiles			${name}-${version}.src.tar.gz
 patchfiles	      	patch-lib-geodyn-CMakeLists.txt.diff \
 					patch-UTCTime.cpp.diff
 
+depends_build		port:libtool \
+					port:autoconf \
+					port:automake
+
+configure.args 		--exec-prefix=${prefix}
+use_autoreconf 		yes
+use_automake		yes
+use_autoconf 		yes
