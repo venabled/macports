@@ -1,0 +1,13 @@
+--- lib/geodyn/CMakeLists.txt.orig	2013-08-07 13:02:45.000000000 -0500
++++ lib/geodyn/CMakeLists.txt	2013-08-07 13:03:01.000000000 -0500
+@@ -13,10 +13,8 @@
+ IERSConventions.cpp
+ JGM3GravityModel.cpp
+ KeplerOrbit.cpp
+-LEOSatOrbit.cpp
+ Msise00Drag.cpp
+ MoonForce.cpp
+-NavSatOrbit.cpp
+ PvtStore.cpp
+ ReferenceFrames.cpp
+ RelativityEffect.cpp
